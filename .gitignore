@@ -1,0 +1,26 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Chroma database
+chroma_db/
+backend/chroma_db/
+
+# Uploads
+backend/uploads/
+
+# React dependencies
+node_modules/
+frontend/node_modules/
+**/node_modules/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
