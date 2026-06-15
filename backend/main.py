@@ -59,6 +59,10 @@ app.include_router(risk_router, prefix="/risk-score", tags=["risk"])
 app.include_router(documents_router, prefix="/documents", tags=["documents"])
 
 
+@app.get("/")
+async def root():
+    return {"message": "Legal Document Intelligence API", "docs": "/docs"}
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "version": "1.0.0"}
