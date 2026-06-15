@@ -9,9 +9,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 
 import fitz  # PyMuPDF
-from llama_index.core import Document
-from llama_index.core.node_parser import NodeParser
-from llama_index.core.schema import TextNode
+from vector_store.chroma_client import TextNode
 
 # ─── Clause boundary patterns ────────────────────────────────────────────────
 # Matches common legal section headers like:
