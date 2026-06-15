@@ -7,29 +7,20 @@ pydantic==2.7.1
 # PDF Parsing
 pymupdf==1.24.3
 
-# Embeddings & LLMs
+# Google Gemini LLM
 google-genai>=1.0.0
-sentence-transformers==3.0.0
 
-# RAG / Vector Search
-llama-index==0.10.43
-llama-index-vector-stores-pinecone==0.1.9
-llama-index-vector-stores-chroma==0.1.10
-llama-index-retrievers-bm25==0.2.0
+# Embeddings — CPU-only torch to keep size small
+sentence-transformers==3.0.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.3.0+cpu
+
+# Vector Store
 chromadb==0.5.23
 numpy<2.0
-pinecone-client==3.2.2
-
-# BM25
-rank-bm25==0.2.2
-
-# Risk scoring / NLP
-transformers==4.41.2
-torch==2.3.0
-scikit-learn==1.5.0
 
 # Utilities
 python-dotenv==1.0.1
-httpx==0.27.0
+httpx==0.28.1
 aiofiles==23.2.1
 tenacity==8.3.0
