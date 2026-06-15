@@ -23,13 +23,16 @@ from routes.documents import router as documents_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: warm up embedding model so first request isn't slow."""
-    from services.embeddings import get_embedding_model
-    print("🔥 Warming up embedding model...")
-    get_embedding_model()
-    print("✅ Ready.")
+    # Load model in background after server starts so health check passes immediately
+    import asyncio
+    async def _warmup():
+        await asyncio.sleep(2)
+        from services.embeddings import get_embedding_model
+        print("🔥 Warming up embedding model...")
+        get_embedding_model()
+        print("✅ Ready.")
+    asyncio.create_task(_warmup())
     yield
-    # Shutdown: nothing to clean up for Chroma (auto-persists)
 
 
 app = FastAPI(
@@ -42,7 +45,7 @@ app = FastAPI(
 # Allow requests from the React frontend (adjust origin in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
