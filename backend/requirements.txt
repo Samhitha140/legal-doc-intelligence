@@ -7,13 +7,8 @@ pydantic==2.7.1
 # PDF Parsing
 pymupdf==1.24.3
 
-# Google Gemini LLM
+# Google Gemini — LLM + Embeddings
 google-genai>=1.0.0
-
-# Embeddings — CPU-only torch to keep size small
-sentence-transformers==3.0.0
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.5.1+cpu
 
 # Vector Store
 chromadb==0.5.23
