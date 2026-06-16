@@ -75,7 +75,11 @@ Returns:
 
 Watch the complete workflow here:
 
-[![Watch Demo](https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge)]
+[![Watch Demo](
+
+https://github.com/user-attachments/assets/ad4cdf0e-4de5-4ec6-bbc9-64c7ac340bc3
+
+)]
 
 👉 Replace with your YouTube/GitHub video link
 
